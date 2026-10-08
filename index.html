@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frog Feast - Casual Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Start Screen -->
+        <div id="startScreen" class="screen active">
+            <div class="start-content">
+                <h1 class="game-title">🐸 Frog Feast 🐸</h1>
+                <p class="tagline">Hop around and collect delicious food!</p>
+                <div class="instructions">
+                    <h3>How to Play</h3>
+                    <ul>
+                        <li>🎮 Use Arrow Keys / WASD to move (Desktop)</li>
+                        <li>👆 Use virtual controls or touch (Mobile)</li>
+                        <li>🍽️ Collect food before time runs out</li>
+                        <li>🍓 Berry: +10 pts | 🪰 Fly: +20 pts | 🐞 Insect: +50 pts</li>
+                        <li>⭐ Bonus items: Speed boost or extra time</li>
+                        <li>⏱️ 60 seconds per round</li>
+                    </ul>
+                </div>
+                <button id="playBtn" class="btn btn-primary">PLAY</button>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="screen">
+            <div class="game-hud">
+                <div class="score-display">
+                    <div class="score-item">
+                        <span class="label">SCORE</span>
+                        <span id="scoreValue" class="value">0</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="label">HIGH SCORE</span>
+                        <span id="highScoreValue" class="value">0</span>
+                    </div>
+                </div>
+                <div class="timer-display">
+                    <span class="label">TIME</span>
+                    <span id="timerValue" class="timer-value">60</span>
+                </div>
+                <div class="food-collected">
+                    <span class="label">COLLECTED</span>
+                    <div id="foodIcons" class="food-icons"></div>
+                </div>
+            </div>
+
+            <div id="gameCanvas" class="game-canvas"></div>
+
+            <!-- Mobile Controls -->
+            <div id="mobileControls" class="mobile-controls">
+                <button class="control-btn up" data-direction="up">▲</button>
+                <button class="control-btn left" data-direction="left">◄</button>
+                <button class="control-btn down" data-direction="down">▼</button>
+                <button class="control-btn right" data-direction="right">►</button>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="screen">
+            <div class="game-over-content">
+                <h2 class="game-over-title">Game Over!</h2>
+                <div class="final-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Final Score:</span>
+                        <span id="finalScore" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">High Score:</span>
+                        <span id="finalHighScore" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Food Collected:</span>
+                        <span id="finalFoodCount" class="stat-value">0</span>
+                    </div>
+                    <div class="collected-items">
+                        <h4>Items:</h4>
+                        <div id="collectedItems" class="items-grid"></div>
+                    </div>
+                </div>
+                <button id="playAgainBtn" class="btn btn-primary">PLAY AGAIN</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
